@@ -1,0 +1,55 @@
+@import "tailwindcss";
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.diamond {
+  width: 100px;
+  height: 100px;
+  background: rgba(211, 211, 211, 0.5);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.diamond:hover {
+  transform: scale(1.1);
+  background: rgba(211, 211, 211, 0.7);
+}
+
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-effect.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glass-card-dark {
+  background: rgba(30, 58, 138, 0.2); /* Dark blue glass */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(96, 165, 250, 0.3); /* Light blue edge */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Keep your scroll effect if defined */
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
